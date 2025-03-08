@@ -68,14 +68,15 @@ unsigned char * broadcastIp(unsigned char *Ip, unsigned char *mascara){
 
 
 void rangoHosts(unsigned char *ipRed, unsigned char *ipBroadcast, unsigned char *mascara){
-    unsigned char inferior[4];
-    unsigned char superior[4];
-    for (char j = 0; j < 4; j++)
-    {
-        
-    }
+    unsigned char * inferior = ipRed;
+    unsigned char * superior = ipBroadcast;
     
+    inferior[3]++;
+    superior[3]--;
 
+    printf("Rango de hosts válidos: %d.%d.%d.%d - %d.%d.%d.%d\n",
+        inferior[0], inferior[1], inferior[2], inferior[3],
+        superior[0], superior[1], superior[2], superior[3]);
 }
 
 // 169.253.255.255
